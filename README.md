@@ -1,4 +1,4 @@
 # ArchLinstall
 Use https://git.io/ for raw file.
 
-curl -L <link> -o pt<n>.sh
+curl -L _linuk_ -o pt_n_.sh
