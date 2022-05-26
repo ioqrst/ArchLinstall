@@ -9,8 +9,8 @@ cfdisk
 
 echo "formating"
 mkfs.fat -F32 /dev/sda1
-mkfs.btrfs -L root /dev/sda2
-mkfs.btrfs -L home /dev/sda3
+mkfs.btrfs -L ROOT /dev/sda2 -f
+mkfs.btrfs -L HOME /dev/sda3 -f
 
 echo "mounted"
 mount /dev/sda2 /mnt
