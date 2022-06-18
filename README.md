@@ -1,4 +1,8 @@
 # ArchLinstall
-Use some kind of link shortener, since git.io covered with a copper basin ... for raw file.
+Простые bash скрипты по установке арча в полуавтоматическом режиме.
 
-curl -L _linuk_ -o pt_n_.sh
+# !!!ВАЖНО!!!
+Перед запуском скриптов лучше просмотреть что в них находится и, при необходимости, поменять.
+
+# Как загрузить?
+В терминале выполнить команду `curl -L _linuk_ -o pt_n_.sh`
