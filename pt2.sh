@@ -13,11 +13,13 @@ echo 'FONT=cyr-sun16' >> /etc/vconsole.conf
 echo "$pcname" > /etc/hostname
 echo "127.0.1.1 localhost.localdomain $pcname" /etc/hosts
 
-pacman -S networkmanager grub efibootmgr --noconfirm
+pacman -S networkmanager --noconfirm
 systemctl enable NetworkManager
 
 echo "root password"
 passwd 
+
+pacman -S grub efibootmgr --noconfirm
 
 mkdir /boot/efi
 mount /dev/sda1 /boot/efi
