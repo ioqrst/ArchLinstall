@@ -2,24 +2,22 @@
 
 loadkeys ru
 setfont cyr-sun16
+timedatectl set-ntp true
 
-echo "cfdisk"
-echo "Standart for me : efi - 1G root - 30G home - остаток"
 cfdisk
 
-echo "formating"
 mkfs.fat -F32 /dev/sda1
-mkfs.btrfs -L ROOT /dev/sda2 -f
-mkfs.btrfs -L HOME /dev/sda3 -f
+mkswap /dev/sda2
+mkfs.btrfs -L root /dev/sda3 -f
+mkfs.btrfs -L home /dev/sda4 -f
 
-echo "mounted"
-mount /dev/sda2 /mnt
+mount /dev/sda3 /mnt
 mkdir /mnt/home
-mount /dev/sda3 /mnt/home
+mount /dev/sda4 /mnt/home
+swapon /dev/sda2
 
-echo "install base system"
 pacstrap -i /mnt btrfs-progs base base-devel linux-zen linux-zen-headers linux-firmware nano git sudo
+
 genfstab -U -p /mnt >> /mnt/etc/fstab
 
-echo "chroot enter"
 arch-chroot /mnt /bin/bash
