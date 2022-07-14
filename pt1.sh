@@ -16,7 +16,7 @@ mkdir /mnt/home
 mount /dev/sda4 /mnt/home
 swapon /dev/sda2
 
-pacstrap -i /mnt btrfs-progs base base-devel linux-zen linux-zen-headers linux-firmware nano git sudo
+pacstrap -i /mnt btrfs-progs base base-devel linux-zen linux-zen-headers linux-firmware nano git sudo --noconfirm
 
 genfstab -U -p /mnt >> /mnt/etc/fstab
 
